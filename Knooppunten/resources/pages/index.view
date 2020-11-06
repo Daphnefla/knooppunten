@@ -1,0 +1,15 @@
+<svg viewport-fill="#000000">
+
+  <text id="text" fill="white" x="50%" y="50" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" /><br>
+  <text id="text1" fill="white" x="50%" y="100" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" /><br>
+  <text id="text2" fill="white" x="50%" y="150" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" /><br>
+  <text id="text3" fill="white" x="50%" y="200" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" /><br>
+  <text id="text4" fill="white" x="50%" y="250" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" /><br>
+
+
+  <use href="#button" fill="#FFFF00" x="25%" y="100%-70" width="50%" text-anchor="middle">
+    <set href="text" attributeName="text-buffer" to="Detail" />
+    <set href="handle" attributeName="id" to="detail-button" />
+  </use>
+
+</svg>

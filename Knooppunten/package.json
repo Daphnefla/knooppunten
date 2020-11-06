@@ -1,0 +1,41 @@
+{
+  "name": "Knooppunten",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.1",
+    "@fitbit/sdk-cli": "^1.7.3",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.5"
+  },
+  "fitbit": {
+    "appUUID": "d7ed5a86-e74e-4147-b436-c1c10bb92c67",
+    "appType": "app",
+    "appClusterID": "my.alphabet.cluster",
+    "developerID": "78fe8355-c47c-440b-8782-2bfc9d8653e1",
+    "appDisplayName": "Knooppunten",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [
+      "access_app_cluster_storage",
+      "access_activity",
+      "access_heart_rate",
+      "access_location",
+      "access_exercise"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
