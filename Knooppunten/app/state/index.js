@@ -31,9 +31,9 @@ function updateState() {
 function loadState() {
   try {
     const loadedState = filesystem.readFileSync('state.txt', 'json');
-    if (typeof loadedState.items !== 'undefined') state.items = loadedState.items;
+
     if (typeof loadedState.list !== 'undefined') state.list = loadedState.list;
-    if (typeof loadedState.letter !== 'undefined') state.letter = loadedState.letter;
+
   } catch (err) {
     console.error(`Failed loading state: ${err}`);
   }
@@ -56,9 +56,9 @@ function processFiles() {
     if (fileName === 'settings.cbor') {
       const data = filesystem.readFileSync(fileName, 'cbor');
 
-      if (typeof data.items !== 'undefined') state.items = data.items;
+
       if (typeof data.list !== 'undefined') state.list = data.list;
-      if (typeof data.letter !== 'undefined') state.letter = data.letter;
+
 
       updateState();
       if (callback) callback();

@@ -20,6 +20,7 @@ export function destroy() {
   $namepoint3 = null;
   $namepoint4 = null;
   //$buttonReplace = null;
+  removeStateCallback();
 }
 
 function draw() {
