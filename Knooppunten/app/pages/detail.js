@@ -1,16 +1,31 @@
 import document from 'document';
 import { switchPage } from '../navigation';
 import { getStateItem, setStateCallback, removeStateCallback } from '../state';
-import exercise from "exercise";
+import { exercise } from "exercise";
 import { geolocation } from "geolocation";
 
 let $namepoint = null;
 let $volgendepunt = null;
 let $kmToNext = null;
 let $snelheid = null;
+let $buttonSnelheid = null;
+let watchID = null;
 
 //geolocation
-let watchID = geolocation.watchPosition(locationSuccess, locationError, { timeout: 60 * 1000 });
+let watchID = geolocation.watchPosition(locationSuccess, locationError);
+
+
+export function destroy() {
+  console.log('destroy detail page');
+  geolocation.clearWatch(watchID);
+  $namepoint = null;
+  $volgendepunt = null;
+  $kmToNext = null;
+  $snelheid = null;
+  $buttonSnelheid = null;
+  watchID = null;
+  removeStateCallback();
+}
 
 function locationSuccess(position) {
     const list = getStateItem('list');
@@ -20,8 +35,7 @@ function locationSuccess(position) {
     const lon2 = position.coords.longitude;
     const unit = "K";
     const dist = distance(lat1, lon1, lat2, lon2, unit);
-    console.log("the dist is " + dist);
-    return dist;
+    $kmToNext.text = dist;
 }
 
 function locationError(error) {
@@ -54,8 +68,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
 function draw() {
-  const list = getStateItem('list');
-  // const listOneItem= getStateItem('list')[0].letter;
+
   exercise.start("cycling", { gps: false });
     console.log(exercise.state);
     console.log("no");
@@ -63,11 +76,17 @@ function draw() {
     console.log(exercise.stats.speed.current);
     console.log(exercise.stats.speed.max);
 //    $speedrn = exercise.stats.speed.current;
-    $snelheid.text = Math.round(exercise.stats.speed.current /3.6) + "km/h";
+    $snelheid.text = Math.round(exercise.stats.speed.current /3.6) + " km/h";
     exercise.stop();
   }
 
-    console.log(exercise.state);
+  console.log(exercise.state);
+
+  const list = getStateItem('list');
+
+  geolocation.watchPosition(locationSuccess, locationError);
+  // const listOneItem= getStateItem('list')[0].letter;
+
 //set text in pages/detail.view
   if (list) {
     $namepoint.text = list[0].value;
@@ -78,15 +97,6 @@ function draw() {
   }
 }
 
-export function destroy() {
-  console.log('destroy detail page');
-  geolocation.clearWatch(watchID);
-  $namepoint = null;
-  $volgendepunt = null;
-  $kmToNext = null;
-  $snelheid = null;
-  removeStateCallback();
-}
 
 export function init() {
   console.log('init detail page');
@@ -95,9 +105,9 @@ export function init() {
   $kmToNext = document.getElementById('kmToNext');
   $snelheid = document.getElementById('speed');
   $buttonSnelheid = document.getElementById('snelheid-button');
-
+  watchID = null;
   $buttonSnelheid.onclick = () => {
-  switchPage('snelheid', true);
+    switchPage('snelheid', true);
   };
 
   setStateCallback(draw);

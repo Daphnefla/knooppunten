@@ -1,21 +1,22 @@
 <svg viewport-fill="#000000">
 
 
-<circle cx="80" cy="250" r="45" fill="gray" />
+
 <circle cx="250" cy="250" r="45"  fill="gray" />
 <circle id="bigCircle" cx="170" cy="110" r="95"  fill="red" />
 
-<circle id="snelheid-button" cx="80" cy="250" r="42"   fill="#000000" />
+
 <circle cx="250" cy="250" r="42"  fill="#000000" />
 <circle cx="170" cy="110" r="93"  fill="#000000" />
 <arc id="vooruitgang" x="75" y="15" width="190" height="190" fill="green" arc-width="3" start-angle="0" sweep-angle="90"/>
 
 <textarea class="" id="bijschrift" fill="gray" x="18" y="40" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="Volgende" />
 
+<use href="#buttoninfo">
+  <set href="handletwee" attributeName="id" to="snelheid-button" />
+</use>
 
 <text class="" id="textpunt" fill="white" x="50%" y="130" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
 <text id="kmToNext" fill="white" x="50%" y="170" width="300" font-size="32" font-family="System-Regular" text-anchor="middle" text-length="20" />
-<textarea fill="white" x="55" y="230" width="45" height="110" font-size="20" font-family="System-Regular" text-anchor="middle" text-buffer="15km/h" />
-
 <text id="textvolgende" fill="white" x="250" y="264" width="45" height="110" font-size="40" font-family="System-Regular" text-anchor="middle" />
 </svg>
