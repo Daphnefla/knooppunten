@@ -10,3 +10,33 @@
   height: 100%;
   fill: white;
 }
+
+.list-item {
+  height: 112;
+}
+
+.list-item text {
+  fill: "white";
+  x: 50%;
+  text-anchor: middle;
+  font-size: 24;
+}
+
+.line {
+  height: 6;
+  width: 100%;
+  fill: #222222;
+  y: 100%-6;
+}
+
+.header text {
+  font-weight: bold;
+  fill: fb-cyan;
+  font-size: 30;
+}
+
+.footer text {
+  font-weight: bold;
+  fill: fb-green;
+  font-size: 30;
+}

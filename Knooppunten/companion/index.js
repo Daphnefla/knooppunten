@@ -27,7 +27,7 @@ function sendSettings() {
       //set the values of each item being part of the list, which is send to the device
       value: item.value,
       name: item.name,
-      lan: item.lan,
+      lat: item.lat,
       lon: item.lon,
     })) : [],
   };
