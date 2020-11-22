@@ -1,6 +1,7 @@
 import document from 'document';
 import { switchPage } from '../navigation';
 import { getStateItem, setStateCallback, removeStateCallback } from '../state';
+import exercise from "exercise";
 import { geolocation } from "geolocation";
 
 let $namepoint = null;
@@ -9,7 +10,7 @@ let $kmToNext = null;
 let $snelheid = null;
 
 //geolocation
-//let watchID = geolocation.watchPosition(locationSuccess, locationError, { timeout: 60 * 1000 });
+let watchID = geolocation.watchPosition(locationSuccess, locationError, { timeout: 60 * 1000 });
 
 function locationSuccess(position) {
     const list = getStateItem('list');
@@ -71,7 +72,7 @@ function draw() {
   if (list) {
     $namepoint.text = list[0].value;
     $volgendepunt.text = list[1].value;
-    $kmToNext.text = watchID.toString();
+    $kmToNext.text = watchID;
   } else {
     $namepoint.text = 'set item';
   }
