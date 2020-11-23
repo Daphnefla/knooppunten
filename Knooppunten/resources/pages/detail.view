@@ -12,7 +12,7 @@
 
 <textarea class="" id="bijschrift" fill="gray" x="18" y="40" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="Volgende" />
 
-<use href="#buttoninfo">
+<use href="#buttoninfo" x="80" y="250">
   <set href="handletwee" attributeName="id" to="snelheid-button" />
 </use>
 

@@ -106,7 +106,9 @@ export function init() {
   $snelheid = document.getElementById('speed');
   $buttonSnelheid = document.getElementById('snelheid-button');
   watchID = null;
+  console.log('hier');
   $buttonSnelheid.onclick = () => {
+    console.log("test");
     switchPage('snelheid', true);
   };
 
