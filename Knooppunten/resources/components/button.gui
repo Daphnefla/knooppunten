@@ -8,7 +8,13 @@
   <symbol id="buttoninfo" height="50">
       <circle cx="0" cy="0" r="45" fill="gray" />
       <circle cx="0" cy="0" r="42"   fill="#000000" />
-      <textarea id="speed" fill="white" x="0" y="20" width="45" height="110" text-anchor="middle" font-size="20" font-family="System-Regular" text-anchor="middle" text-buffer="15km/h" />
+      <textarea id="speed" fill="white" x="-25" y="-25" width="45" height="110" font-size="20" font-family="System-Regular" text-anchor="middle" text-buffer="15km/h" />
       <rect id="handletwee" fill="black" x="-50" y="-50" width="100" height="100" opacity="0" pointer-events="visible"/>
+  </symbol>
+  <symbol id="buttonback" height="50">
+      <circle cx="0" cy="0" r="45"  fill="gray" />
+      <circle cx="0" cy="0" r="42"  fill="#000000" />
+      <text id="textpunt" fill="white" x="-2" y="15" width="45" height="110" font-size="40" font-family="System-Regular" text-anchor="middle" />
+      <rect id="handleback" fill="black" x="-50" y="-50" width="100" height="100" opacity="0" pointer-events="visible"/>
   </symbol>
 </defs>

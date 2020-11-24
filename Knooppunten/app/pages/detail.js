@@ -7,7 +7,7 @@ import { geolocation } from "geolocation";
 let $namepoint = null;
 let $volgendepunt = null;
 let $kmToNext = null;
-let $snelheid = null;
+let $speed = null;
 let $buttonSnelheid = null;
 let watchID = null;
 
@@ -17,13 +17,15 @@ let watchID = geolocation.watchPosition(locationSuccess, locationError);
 
 export function destroy() {
   console.log('destroy detail page');
-  geolocation.clearWatch(watchID);
+  //geolocation.clearWatch(watchID);
+      console.log('hallo detail');
   $namepoint = null;
   $volgendepunt = null;
   $kmToNext = null;
-  $snelheid = null;
+  $speed = null;
   $buttonSnelheid = null;
   watchID = null;
+
   removeStateCallback();
 }
 
@@ -76,7 +78,7 @@ function draw() {
     console.log(exercise.stats.speed.current);
     console.log(exercise.stats.speed.max);
 //    $speedrn = exercise.stats.speed.current;
-    $snelheid.text = Math.round(exercise.stats.speed.current /3.6) + " km/h";
+    $speed.text = Math.round(exercise.stats.speed.current /3.6) + " km/h";
     exercise.stop();
   }
 
@@ -100,16 +102,18 @@ function draw() {
 
 export function init() {
   console.log('init detail page');
+    console.log('check tzee');
   $namepoint = document.getElementById('textpunt');
   $volgendepunt = document.getElementById('textvolgende');
   $kmToNext = document.getElementById('kmToNext');
-  $snelheid = document.getElementById('speed');
+  $speed = document.getElementById('speed');
   $buttonSnelheid = document.getElementById('snelheid-button');
   watchID = null;
   console.log('hier');
   $buttonSnelheid.onclick = () => {
-    console.log("test");
+
     switchPage('snelheid', true);
+        console.log("test");
   };
 
   setStateCallback(draw);

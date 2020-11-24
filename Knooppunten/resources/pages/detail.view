@@ -16,7 +16,7 @@
   <set href="handletwee" attributeName="id" to="snelheid-button" />
 </use>
 
-<text class="" id="textpunt" fill="white" x="50%" y="130" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
+<text class="" id="textpunt" fill="white" x="50%" y="125" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
 <text id="kmToNext" fill="white" x="50%" y="170" width="300" font-size="32" font-family="System-Regular" text-anchor="middle" text-length="20" />
 <text id="textvolgende" fill="white" x="250" y="264" width="45" height="110" font-size="40" font-family="System-Regular" text-anchor="middle" />
 </svg>

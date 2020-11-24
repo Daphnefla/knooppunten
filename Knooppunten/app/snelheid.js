@@ -4,4 +4,4 @@ import router from './router';
 
 initState();
 initNavigation(router);
-switchPage('detail');
+switchPage('snelheid'); 

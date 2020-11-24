@@ -3,14 +3,38 @@ import { switchPage } from '../navigation';
 import { getStateItem, setStateCallback, removeStateCallback } from '../state';
 
 import exercise from "exercise";
-import { geolocation } from "geolocation";
+//import { geolocation } from "geolocation";
 
-
+console.log("hallo snelheid");
 let $namepoint = null;
-let $snelheid = null;
+let $speed = null;
+let $buttonBack = null;
+let pijltjeLinks = null;
+let pijltjeRechts = null;
+pijltjeLinks = document.getElementById('pijltjelinks');
+pijltjeRechts = document.getElementById('pijltjerechts');
+
+function change(){
+ console.log("het werkt");
+
+}
+
+
+
+export function destroy() {
+  console.log('destroy snelheid page');
+  let $namepoint = null;
+  let $speed = null;
+  let $buttonBack = null;
+  let $pijltjeLinks = null;
+  let $pijltjeRechts = null;
+  removeStateCallback();
+}
+
 
 
 function draw() {
+
   exercise.start("cycling", { gps: false });
     console.log(exercise.state);
     console.log("no");
@@ -18,11 +42,12 @@ function draw() {
     console.log(exercise.stats.speed.current);
     console.log(exercise.stats.speed.max);
 //    $speedrn = exercise.stats.speed.current;
-    $snelheid.text = Math.round(exercise.stats.speed.current /3.6) + "km/h";
+    $speed.text = Math.round(exercise.stats.speed.current /3.6);
     exercise.stop();
   }
 
-    console.log(exercise.state);
+
+
   const list = getStateItem('list');
   // const listOneItem= getStateItem('list')[0].letter;
 //  $speedrn.text =
@@ -34,18 +59,21 @@ function draw() {
   }
 }
 
-export function destroy() {
-  console.log('destroy detail page');
 
-  $namepoint = null;
-  $volgendepunt = null;
-  removeStateCallback();
-}
 
 export function init() {
-  console.log('init detail page');
+  console.log('init snelheid pqge');
   $namepoint = document.getElementById('textpunt');
-  $snelheid = document.getElementById('speed');
+  $speed = document.getElementById('speedbig');
+  $buttonBack = document.getElementById('back-button');
+  pijltjeLinks = document.getElementById('pijltjelinks');
+  pijltjeRechts = document.getElementById('pijltjerechts');
+
+  $buttonBack.onclick = () => {
+    switchPage('detail', true);
+        console.log("test");
+   };
+
 
   setStateCallback(draw);
   draw();
