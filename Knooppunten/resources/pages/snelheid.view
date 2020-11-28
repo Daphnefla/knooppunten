@@ -7,9 +7,6 @@
 
 <circle cx="170" cy="110" r="93"  fill="#000000" />
 
-<rect id="pijltjelinks"  x="25" y="100" width="20" height="20" fill="gray" />
-<rect id="pijltjerechts" class="onzichtaar" x="285" y="100" width="20" height="20" fill="gray" />
-
 <textarea class="" id="bijschrift" fill="gray" x="18" y="40" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="snelheid" />
 
 
@@ -19,6 +16,10 @@
 
 <use href="#buttonback" x="250" y="250">
   <set href="handleback" attributeName="id" to="back-button" />
+</use>
+
+<use href="#pijltjelinks" x="25" y="100">
+  <set href="handleleft" attributeName="id" to="leftarrow-button" />
 </use>
 
 </svg>

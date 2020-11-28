@@ -1,0 +1,25 @@
+<svg viewport-fill="#000000">
+
+
+
+
+<circle id="bigCircle" cx="170" cy="110" r="95"  fill="blue" />
+
+<circle cx="170" cy="110" r="93"  fill="#000000" />
+
+<textarea class="" id="bijschrift" fill="gray" x="18" y="40" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="hartslag" />
+
+
+<text class="" id="heartbeatbig" fill="white" x="50%" y="130" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
+
+<textarea fill="gray" x="18" y="150" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="bmp" />
+
+<use href="#buttonback" x="250" y="250">
+  <set href="handleback" attributeName="id" to="back-button" />
+</use>
+
+<use href="#pijltjerechts" x="285" y="100">
+  <set href="handleright" attributeName="id" to="rightarrow-button" />
+</use>
+
+</svg>

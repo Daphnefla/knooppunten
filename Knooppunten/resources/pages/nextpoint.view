@@ -1,0 +1,54 @@
+<svg>
+  <use href="#scrollview">
+    <use href="#view-header" height="50" fill="black" >
+      <set href="#textheader" attributeName="text-buffer" to="Verander punt:" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text" class="text" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text1" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text2" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text3" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text4" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text5" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text6" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text7" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text8" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="60">
+      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
+      <text id="text9" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
+    </use>
+    <use href="#scrollview-item" height="80">
+      <rect width="100%" height="100%" fill="black" />
+    </use>
+  </use>
+  <rect fill="black" x="0" y="255" width="100%" height="100"/>
+  <use href="#buttonback2" fill="#00FF00" x="25%" y="100%-70" width="50%" text-anchor="middle">
+    <set href="handleback2" attributeName="id" to="back-button" />
+  </use>
+</svg>

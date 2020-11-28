@@ -9,23 +9,21 @@ let $volgendepunt = null;
 let $kmToNext = null;
 let $speed = null;
 let $buttonSnelheid = null;
-let watchID = null;
+let $buttonNextPoint = null;
+let location;
 
 //geolocation
-let watchID = geolocation.watchPosition(locationSuccess, locationError);
+geolocation.watchPosition(locationSuccess, locationError);
 
 
 export function destroy() {
-  console.log('destroy detail page');
   //geolocation.clearWatch(watchID);
-      console.log('hallo detail');
   $namepoint = null;
   $volgendepunt = null;
   $kmToNext = null;
   $speed = null;
   $buttonSnelheid = null;
-  watchID = null;
-
+  $buttonNextPoint = null;
   removeStateCallback();
 }
 
@@ -37,7 +35,10 @@ function locationSuccess(position) {
     const lon2 = position.coords.longitude;
     const unit = "K";
     const dist = distance(lat1, lon1, lat2, lon2, unit);
-    $kmToNext.text = dist;
+    $kmToNext.text = dist + " km";
+    location = dist;
+    locatieVeranderen();
+    return location;
 }
 
 function locationError(error) {
@@ -86,14 +87,12 @@ function draw() {
 
   const list = getStateItem('list');
 
-  geolocation.watchPosition(locationSuccess, locationError);
-  // const listOneItem= getStateItem('list')[0].letter;
-
 //set text in pages/detail.view
   if (list) {
     $namepoint.text = list[0].value;
     $volgendepunt.text = list[1].value;
-    $kmToNext.text = watchID;
+
+
   } else {
     $namepoint.text = 'set item';
   }
@@ -101,25 +100,39 @@ function draw() {
 
 
 export function init() {
-  console.log('init detail page');
-    console.log('check tzee');
   $namepoint = document.getElementById('textpunt');
   $volgendepunt = document.getElementById('textvolgende');
   $kmToNext = document.getElementById('kmToNext');
   $speed = document.getElementById('speed');
   $buttonSnelheid = document.getElementById('snelheid-button');
-  watchID = null;
-  console.log('hier');
-  $buttonSnelheid.onclick = () => {
+  $buttonNextPoint = document.getElementById('nextpoint-button');
 
+  geolocation.watchPosition(locationSuccess, locationError);
+
+
+  $buttonSnelheid.onclick = () => {
     switchPage('snelheid', true);
-        console.log("test");
+  };
+
+  $buttonNextPoint.onclick = () => {
+    switchPage('nextpoint', true);
   };
 
   setStateCallback(draw);
   draw();
 }
 
+function locatieVeranderen() {
+  const list = getStateItem('list');
+
+  if (location<=2) {
+    console.log("locatieveranderen gedaan")
+    list.push(list[0]);
+    list.splice(0, 1)
+    $namepoint.text = list[0].value;
+    $volgendepunt.text = list[1].value;
+  }
+}
 
 
 /*
