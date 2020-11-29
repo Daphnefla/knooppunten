@@ -10,7 +10,7 @@
 <textarea class="" id="bijschrift" fill="gray" x="18" y="40" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="hartslag" />
 
 
-<text class="" id="heartbeatbig" fill="white" x="50%" y="130" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
+<text  id="heartbeatbig" fill="white" x="50%" y="130" width="300" font-size="60" font-family="System-Regular" text-anchor="middle" text-length="20" />
 
 <textarea fill="gray" x="18" y="150" width="300" height="110" font-size="25" font-family="System-Regular" text-anchor="middle" text-buffer="bmp" />
 
