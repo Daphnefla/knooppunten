@@ -13,10 +13,10 @@ let $pijltjeLinks = null;
 
 export function destroy() {
   console.log('destroy snelheid page');
-  let $namepoint = null;
-  let $speed = null;
-  let $buttonBack = null;
-  let $pijltjeLinks = null;
+  $namepoint = null;
+  $speed = null;
+  $buttonBack = null;
+  $pijltjeLinks = null;
   removeStateCallback();
 }
 

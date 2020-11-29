@@ -25,11 +25,11 @@
   </symbol>
   <symbol id="pijltjelinks" height="20">
     <image x="0" y="0" width="30" height="20" href="../arrowlinks.png" />
-    <rect id="handleleft" fill="red" x="0" y="0" width="30" height="20" opacity="0.5" pointer-events="visible"/>
+    <rect id="handleleft" fill="red" x="0" y="0" width="30" height="20" opacity="0" pointer-events="visible"/>
   </symbol>
   <symbol id="pijltjerechts"  height="20">
     <image  x="0" y="0" width="30" height="20" href="../arrowrechts.png" />
-    <rect id="handleright" fill="red" x="0" y="0" width="30" height="20" opacity="0.5" pointer-events="visible"/>
+    <rect id="handleright" fill="red" x="0" y="0" width="30" height="20" opacity="0" pointer-events="visible"/>
   </symbol>
   <symbol id="buttonback2" height="50">
     <rect fill="inherit" x="4" y="0" width="100%-8" height="100%" rx="10" ry="10" />
