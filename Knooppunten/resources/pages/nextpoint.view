@@ -1,54 +1,32 @@
 <svg>
-  <use href="#scrollview">
-    <use href="#view-header" height="50" fill="black" >
-      <set href="#textheader" attributeName="text-buffer" to="Verander punt:" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text" class="text" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text1" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text2" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text3" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text4" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text5" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text6" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text7" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text8" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="60">
-      <rect class="text" width="100%" height="100%" fill="black" pointer-events="visible"/>
-      <text id="text9" fill="white" x="50%" width="300" font-size="36" font-family="System-Regular" text-anchor="middle" text-length="20" />
-    </use>
-    <use href="#scrollview-item" height="80">
-      <rect width="100%" height="100%" fill="black" />
+  <use id="myList" href="#tile-list" y="50" height="100%-100">
+    <var id="virtual" value="1" />
+    <var id="reorder-enabled" value="0"/>
+    <var id="peek-enabled" value="0"/>
+    <var id="separator-height-bottom" value="2" />
+
+    <use id="my-pool" href="#tile-list-pool">
+      <use id="my-pool[0]" href="#my-item2"/>
+      <use id="my-pool[1]" href="#my-item2" />
+      <use id="my-pool[2]" href="#my-item2" />
+      <use id="my-pool[3]" href="#my-item2" />
+      <use id="my-pool[4]" href="#my-item2" />
+      <use id="my-pool[5]" href="#my-item2" />
+      <use id="my-pool[6]" href="#my-item2" />
+      <use id="my-pool[7]" href="#my-item2" />
+      <use id="my-pool[8]" href="#my-item2" />
+      <use id="my-pool[9]" href="#my-item2" />
+      <use id="my-pool[10]" href="#my-item2" />
+      <use id="my-pool[11]" href="#my-item2" />
+      <use id="my-pool[12]" href="#my-item2" />
+      <use id="my-pool[13]" href="#my-item2" />
+      <use id="my-pool[14]" href="#my-item2" />
     </use>
   </use>
-  <rect fill="black" x="0" y="255" width="100%" height="100"/>
-  <use href="#buttonback2" fill="#00FF00" x="25%" y="100%-70" width="50%" text-anchor="middle">
+  <rect fill="black" x="0" y="0" width="100%" height="55"/>
+  <rect fill="black" x="0" y="100%-65" width="100%" height="65"/>
+  <text x="50%" y="30" text-anchor="middle" fill="white">Verander punt:</text>
+  <use href="#buttonback2" fill="#00FF00" x="25%" y="100%-60" width="50%" text-anchor="middle">
     <set href="handleback2" attributeName="id" to="back-button" />
   </use>
 </svg>

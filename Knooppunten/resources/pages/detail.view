@@ -3,12 +3,12 @@
 
 
 <circle cx="250" cy="250" r="45"  fill="gray" />
-<circle id="bigCircle" cx="170" cy="110" r="95"  fill="red" />
+<circle id="bigCircle" cx="170" cy="110" r="95"  fill="#00FF00" />
 
 
 <circle cx="250" cy="250" r="42"  fill="#000000" />
-<circle cx="170" cy="110" r="93"  fill="#000000" />
-<arc id="vooruitgang" x="75" y="15" width="190" height="190" fill="green" arc-width="3" start-angle="0" sweep-angle="90"/>
+<circle cx="170" cy="110" r="92"  fill="#000000" />
+<arc id="vooruitgang" x="75" y="15" width="190" height="190" fill="red" arc-width="3" start-angle="0" sweep-angle="0"/>
 
 
 

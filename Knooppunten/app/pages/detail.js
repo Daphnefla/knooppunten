@@ -11,7 +11,9 @@ let $speed = null;
 let $buttonSnelheid = null;
 let $buttonNextPoint = null;
 let location;
-
+let $totDistToNextPoint = null;
+let $arc = null;
+let $angle = null;
 //geolocation
 geolocation.watchPosition(locationSuccess, locationError);
 
@@ -24,6 +26,9 @@ export function destroy() {
   $speed = null;
   $buttonSnelheid = null;
   $buttonNextPoint = null;
+  $totDistToNextPoint = null;
+  $arc = null;
+  $angle = null;
   removeStateCallback();
 }
 
@@ -36,6 +41,8 @@ function locationSuccess(position) {
     const unit = "K";
     const dist = distance(lat1, lon1, lat2, lon2, unit);
     $kmToNext.text = dist + " km";
+    $arc.sweepAngle = Math.round($angle);
+
     location = dist;
     locatieVeranderen();
     return location;
@@ -96,18 +103,25 @@ function draw() {
   } else {
     $namepoint.text = 'set item';
   }
+
+
+
+
 }
 
 
 export function init() {
+  $totDistToNextPoint = 0;
   $namepoint = document.getElementById('textpunt');
   $volgendepunt = document.getElementById('textvolgende');
   $kmToNext = document.getElementById('kmToNext');
   $speed = document.getElementById('speed');
   $buttonSnelheid = document.getElementById('snelheid-button');
   $buttonNextPoint = document.getElementById('nextpoint-button');
+  $arc = document.getElementById("vooruitgang");
 
-  geolocation.watchPosition(locationSuccess, locationError);
+  geolocation.getCurrentPosition(locationSuccess, locationError);
+
 
 
   $buttonSnelheid.onclick = () => {
@@ -125,24 +139,35 @@ export function init() {
 function locatieVeranderen() {
   const list = getStateItem('list');
 
+
+  if($totDistToNextPoint === 0){
+      $totDistToNextPoint = location;
+    console.log($totDistToNextPoint + 'newtotdistinifstatement');
+  }
+
+  // make circle show distance
+  console.log(location)
+  console.log($totDistToNextPoint + 'newtotdist');
+  $angle = (location * 360)/ $totDistToNextPoint;
+  console.log(Math.round($angle))
+
   if (location<=2) {
-    console.log("locatieveranderen gedaan")
+    console.log("locatieveranderen gedaan");
     list.push(list[0]);
-    list.splice(0, 1)
+    list.splice(0, 1);
     $namepoint.text = list[0].value;
     $volgendepunt.text = list[1].value;
+    $totDistToNextPoint = 0;
   }
+
+
 }
 
-
 /*
-let mijnNummer = document.getElementById("text");
 let arc = document.getElementById("vooruitgang");
 let bijschrift = document.getElementById("bijschrift");
 let circle = document.getElementById("bigCircle");
 function animaion(){
-   mijnNummer.classList.remove("onzichtbaar");
-   bijschrift.classList.remove("onzichtbaar");
-   arc.classList.add("play");
+
 }
 circle.addEventListener("click", animation); */

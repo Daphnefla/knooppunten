@@ -62,12 +62,12 @@ export function init() {
   hrm.start();
 
   $buttonBack.onclick = () => {
-    switchPage('detail', true);
+    switchPage('detail', false);
         console.log("test");
    };
 
    $pijltjeRechts.onclick = () => {
-     switchPage('snelheid', true);
+     switchPage('snelheid', false);
          console.log("naar snelheid");
     };
 

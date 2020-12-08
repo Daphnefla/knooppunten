@@ -63,7 +63,7 @@ export function init() {
    };
 
    $pijltjeLinks.onclick = () => {
-     switchPage('hartslag', true);
+     switchPage('hartslag', false);
          console.log("naar hartslag");
     };
 
