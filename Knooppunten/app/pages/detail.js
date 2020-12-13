@@ -41,10 +41,11 @@ function locationSuccess(position) {
     const unit = "K";
     const dist = distance(lat1, lon1, lat2, lon2, unit);
     $kmToNext.text = dist + " km";
-    $arc.sweepAngle = Math.round($angle);
-
     location = dist;
+
+    $angle = changeCircle();
     locatieVeranderen();
+    $arc.sweepAngle = Math.round(location*location);
     return location;
 }
 
@@ -125,7 +126,7 @@ export function init() {
 
 
   $buttonSnelheid.onclick = () => {
-    switchPage('snelheid', true);
+    switchPage('snelheid', false);
   };
 
   $buttonNextPoint.onclick = () => {
@@ -139,18 +140,6 @@ export function init() {
 function locatieVeranderen() {
   const list = getStateItem('list');
 
-
-  if($totDistToNextPoint === 0){
-      $totDistToNextPoint = location;
-    console.log($totDistToNextPoint + 'newtotdistinifstatement');
-  }
-
-  // make circle show distance
-  console.log(location)
-  console.log($totDistToNextPoint + 'newtotdist');
-  $angle = (location * 360)/ $totDistToNextPoint;
-  console.log(Math.round($angle))
-
   if (location<=2) {
     console.log("locatieveranderen gedaan");
     list.push(list[0]);
@@ -161,6 +150,20 @@ function locatieVeranderen() {
   }
 
 
+}
+
+function changeCircle() {
+
+  if($totDistToNextPoint === 0){
+      $totDistToNextPoint = location;
+    console.log($totDistToNextPoint + 'newtotdistinifstatement');
+  }
+  // make circle show distance
+  console.log(location)
+  console.log($totDistToNextPoint + 'newtotdist');
+  $angle = (location * 360)/ $totDistToNextPoint;
+  console.log(Math.round($angle))
+  return $angle;
 }
 
 /*

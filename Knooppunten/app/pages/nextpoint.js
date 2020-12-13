@@ -73,12 +73,10 @@ function eventsClick() {
     $allPoints[i].addEventListener("click", function() {
       const list = getStateItem('list');
       const index = $allPoints.indexOf(this);
-      index = index-1;
+
         if (index > -1) {
           console.log("index" + index + "was clicked");
           list = array_move(list, index, 0);
-          draw();
-
         }
     });
   }
@@ -86,13 +84,6 @@ function eventsClick() {
 }
 
 function array_move(arr, old_index, new_index) {
-  console.log("function array_move was started");
-    if (new_index >= arr.length) {
-        var k = new_index - arr.length + 1;
-        while (k--) {
-            arr.push(undefined);
-        }
-    }
     arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
     return arr;
 };
