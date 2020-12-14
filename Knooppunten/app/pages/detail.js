@@ -1,6 +1,6 @@
 import document from 'document';
 import { switchPage } from '../navigation';
-import { getStateItem, setStateCallback, removeStateCallback } from '../state';
+import { getStateItem, setStateCallback, setStateItem, removeStateCallback } from '../state';
 import { exercise } from "exercise";
 import { geolocation } from "geolocation";
 
@@ -19,14 +19,13 @@ geolocation.watchPosition(locationSuccess, locationError);
 
 
 export function destroy() {
-  //geolocation.clearWatch(watchID);
+
   $namepoint = null;
   $volgendepunt = null;
   $kmToNext = null;
   $speed = null;
   $buttonSnelheid = null;
   $buttonNextPoint = null;
-//  $totDistToNextPoint = null;
   $arc = null;
   $angle = null;
   removeStateCallback();
@@ -134,6 +133,7 @@ export function init() {
   }
 
   $buttonSnelheid.onclick = () => {
+    setStateItem("nextpointPage" , false);
     switchPage('snelheid', true);
   };
 
@@ -173,12 +173,3 @@ function changeCircle() {
   console.log(Math.round($angle))
   return $angle;
 }
-
-/*
-let arc = document.getElementById("vooruitgang");
-let bijschrift = document.getElementById("bijschrift");
-let circle = document.getElementById("bigCircle");
-function animaion(){
-
-}
-circle.addEventListener("click", animation); */

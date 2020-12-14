@@ -13,16 +13,12 @@ export function destroy() {
   $buttonDetail = null;
   $list = null;
   $allPoints = null;
-
-  //$buttonReplace = null;
 }
 
 
 
 function draw() {
   const list = getStateItem('list');
-
-
 
   $list.delegate = {
     getTileInfo: (index) => {
@@ -51,20 +47,12 @@ export function init() {
   $list = document.getElementById("myList");
   $allPoints = document.getElementsByClassName('text');
   eventsClick($allPoints);
-  //$buttonReplace = document.getElementById('replace-button');
-
-
-  //$buttonReplace.onclick = () => {
-  //  switchPage('replace');
-  //};
-
   setStateCallback(draw);
   draw();
 }
 
 
 function eventsClick() {
-
   var i;
   var outcome;
   for (i = 0; i < $allPoints.length; i++) {

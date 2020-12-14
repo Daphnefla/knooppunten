@@ -52,14 +52,10 @@ export function init() {
   $buttonDetail = document.getElementById('detail-button');
   $list = document.getElementById("myList");
 
-  //$buttonReplace = document.getElementById('replace-button');
-
   $buttonDetail.onclick = () => {
     switchPage('detail', true);
   };
-  //$buttonReplace.onclick = () => {
-  //  switchPage('replace');
-  //};
+
 
   setStateCallback(draw);
   draw();

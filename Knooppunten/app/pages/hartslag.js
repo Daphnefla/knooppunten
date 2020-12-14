@@ -3,7 +3,6 @@ import { switchPage } from '../navigation';
 import { getStateItem, setStateCallback, removeStateCallback } from '../state';
 
 import exercise from "exercise";
-//import { geolocation } from "geolocation";
 import { HeartRateSensor } from "heart-rate";
 
 
