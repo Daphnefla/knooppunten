@@ -1,6 +1,6 @@
 import document from 'document';
 import { switchPage } from '../navigation';
-import { getStateItem, setStateCallback, removeStateCallback } from '../state';
+import { getStateItem, setStateCallback, setStateItem, removeStateCallback } from '../state';
 import * as detail from './pages/detail';
 
 let $buttonDetail = null;
@@ -47,15 +47,13 @@ function draw() {
 
 export function init() {
   console.log('init index page');
-  $buttonDetail = document.getElementById('back-button');
+
   $list = document.getElementById("myList");
   $allPoints = document.getElementsByClassName('text');
   eventsClick($allPoints);
   //$buttonReplace = document.getElementById('replace-button');
 
-  $buttonDetail.onclick = () => {
-    switchPage('detail', true);
-  };
+
   //$buttonReplace.onclick = () => {
   //  switchPage('replace');
   //};
@@ -77,6 +75,8 @@ function eventsClick() {
         if (index > -1) {
           console.log("index" + index + "was clicked");
           list = array_move(list, index, 0);
+          setStateItem("nextpointPage" , true);
+          switchPage('detail', true);
         }
     });
   }

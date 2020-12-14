@@ -28,7 +28,6 @@
       <rect class="text" width="100%" height="100%" fill="black" pointer-events="all"/>
       <text id="text"/>
       <rect class="line"/>
-      
     </symbol>
 
 

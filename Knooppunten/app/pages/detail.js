@@ -26,7 +26,7 @@ export function destroy() {
   $speed = null;
   $buttonSnelheid = null;
   $buttonNextPoint = null;
-  $totDistToNextPoint = null;
+//  $totDistToNextPoint = null;
   $arc = null;
   $angle = null;
   removeStateCallback();
@@ -45,7 +45,7 @@ function locationSuccess(position) {
 
     $angle = changeCircle();
     locatieVeranderen();
-    $arc.sweepAngle = Math.round(location*location);
+    $arc.sweepAngle = Math.round($angle);
     return location;
 }
 
@@ -95,7 +95,8 @@ function draw() {
 
   const list = getStateItem('list');
 
-//set text in pages/detail.view
+//set text in pages/detail.view\
+
   if (list) {
     $namepoint.text = list[0].value;
     $volgendepunt.text = list[1].value;
@@ -112,7 +113,7 @@ function draw() {
 
 
 export function init() {
-  $totDistToNextPoint = 0;
+
   $namepoint = document.getElementById('textpunt');
   $volgendepunt = document.getElementById('textvolgende');
   $kmToNext = document.getElementById('kmToNext');
@@ -123,10 +124,17 @@ export function init() {
 
   geolocation.getCurrentPosition(locationSuccess, locationError);
 
+  const nextpointPage = getStateItem('nextpointPage');
+  if (nextpointPage === true){
+    $totDistToNextPoint = 0;
+  }
 
+  if ($totDistToNextPoint === null){
+    $totDistToNextPoint = 0;
+  }
 
   $buttonSnelheid.onclick = () => {
-    switchPage('snelheid', false);
+    switchPage('snelheid', true);
   };
 
   $buttonNextPoint.onclick = () => {
