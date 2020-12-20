@@ -18,7 +18,7 @@
   <set href="handleback" attributeName="id" to="back-button" />
 </use>
 
-<use href="#pijltjelinks" x="25" y="100">
+<use href="#pijltjelinks" x="15" y="100">
   <set href="handleleft" attributeName="id" to="leftarrow-button" />
 </use>
 
