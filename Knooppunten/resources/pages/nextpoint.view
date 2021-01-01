@@ -25,6 +25,6 @@
   </use>
   <rect fill="black" x="0" y="0" width="100%" height="55"/>
   <rect fill="black" x="0" y="100%-55" width="100%" height="55"/>
-  <text x="50%" y="40" text-anchor="middle" fill="white">Verander punt:</text>
+  <text x="50%" y="40" text-anchor="middle" fill="white">_verander</text>
 
 </svg>

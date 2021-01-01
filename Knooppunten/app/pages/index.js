@@ -1,6 +1,9 @@
 import document from 'document';
 import { switchPage } from '../navigation';
 import { getStateItem, setStateCallback, removeStateCallback } from '../state';
+import { gettext } from "i18n";
+
+
 
 let $buttonDetail = null;
 let $list = null;

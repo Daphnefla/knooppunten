@@ -1,0 +1,17 @@
+msgid "route"
+msgstr "Uw route:"
+
+msgid "bevestig"
+msgstr "Bevestig"
+
+msgid "volgende"
+msgstr "Volgende"
+
+msgid "verander"
+msgstr "Verander punt:"
+
+msgid "hartslag"
+msgstr "Hartslag"
+
+msgid "snelheid"
+msgstr "Snelheid"

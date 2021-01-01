@@ -1,0 +1,17 @@
+msgid "route"
+msgstr "Your route:"
+
+msgid "bevestig"
+msgstr "Continue"
+
+msgid "volgende"
+msgstr "Next"
+
+msgid "verander"
+msgstr "Change point:"
+
+msgid "hartslag"
+msgstr "Heart rate"
+
+msgid "snelheid"
+msgstr "Speed"
